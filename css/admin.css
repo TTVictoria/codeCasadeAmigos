@@ -1,0 +1,34 @@
+body {
+    font-family: 'Playfair Display SC', serif;
+    background-color: #D2E5F8;
+    line-height: 1.5;
+    font-style: normal;
+    letter-spacing: 0.02em;
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.casadeAmigos {
+      background-position: center;
+      color: #223580;
+      font-size: 80px;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      margin-left: 300px;
+    }
+
+
+.mozaika1left {
+    left: 0;
+    font-size: 95px;
+
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    z-index: 1; 
+}

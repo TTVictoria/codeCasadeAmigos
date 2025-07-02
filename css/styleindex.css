@@ -1,0 +1,221 @@
+body {
+    font-family: 'Playfair Display SC', serif;
+    background-color: #D2E5F8;
+    line-height: 1.5;
+    font-style: normal;
+    letter-spacing: 0.02em;
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;  /* нету прокрутки страницы */
+}
+
+.casadeAmigos {
+      background-position: center;
+      color: #223580;
+      font-size: 80px;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      margin-left: 300px;
+    }
+
+
+
+.mozaika1left {
+    left: 0;
+    font-size: 95px;
+
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    z-index: 1; 
+}
+
+.center-content {
+  text-align: center;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 300px;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.hola {
+    background-position: center;
+      color: #223580;
+      font-size: 45px;
+}
+.login-box, .login-box * {
+  color: #223580; 
+}
+.login-box {
+      background: white;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border: 2px solid #223580;
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 360px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 11;
+    }
+
+
+    input[type="password"] {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      border: 2px solid #223580;
+      border-radius: 12px;
+      box-shadow: 2px solid #223580;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .custom-btn {
+      width: 250px;
+      height: 44px;
+      background-color: #223580;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+
+
+    .error {
+      color: red;
+    }
+
+.frame {
+text-align: center;
+width: 100%;
+font-size: 30px;
+max-width: 600px;
+margin: 40px auto 0;
+z-index: 10;
+margin-left: 40px;
+}
+
+
+<!--кнопка-->
+.custom-btn {
+    width: 200px;
+  height: 60px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none; 
+}
+
+.btn-6 {
+  background: rgb(64, 193, 249);
+background: radial-gradient(circle, rgb(61, 113, 186) 0%, rgba(118,174,241,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover{
+  background: transparent;
+  color: #76aef1;
+  box-shadow: none;
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+}
+
+
+#errorMessage {
+  color: red;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 16px;
+  margin-top: 5px;
+}
