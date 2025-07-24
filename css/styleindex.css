@@ -1,26 +1,32 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 body {
     font-family: 'Playfair Display SC', serif;
-    background-color: #D2E5F8;
+    background-color: #f7f3eb;
     line-height: 1.5;
     font-style: normal;
     letter-spacing: 0.02em;
      display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
   overflow: hidden;  /* нету прокрутки страницы */
+  align-items: center;
+   justify-content: center;
 }
 
 .casadeAmigos {
       background-position: center;
       color: #223580;
-      font-size: 80px;
+    font-size: 80px;
       top: 100px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
       opacity: 0;
-      transform: translateY(50px); /* начальная позиция — чуть ниже */
+      transform: translateY(40px); /* начальная позиция — чуть ниже */
       animation: slideUpFadeIn 1s ease-out forwards;
     }
 
@@ -46,64 +52,68 @@ body {
 
 .center-content {
   text-align: center;
-  position: absolute;
-  margin-top: 200px;
-  margin-left: 300px;
   z-index: 10;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
+   justify-content: center;
+    margin-top: 5px;
+    padding-top: 60px; /* отступ сверху */
+    gap: 3px;
 }
 
 .hola {
     background-position: center;
       color: #223580;
-      font-size: 45px;
+      font-size: 30px;
 }
 .login-box, .login-box * {
   color: #223580; 
 }
-.login-box {
+.login-box {  
       background: white;
-      display: inline-block;
       box-shadow: 0 0 10px rgba(222, 222, 222, 0.2);
-      border: 2px solid #223580;
-      border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 360px;
+      border: none; /* обводка */
+      border-radius: 10px;
+      padding: 50px 40px;
+      width: 400px;
+      max-width: 450px;
       margin: 0 auto;
       position: relative;
       z-index: 11;
+      background: rgba(255, 255, 255, 0.5);
+      box-sizing: border-box;
+
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
     }
+
 
 
     input[type="password"] {
-      padding: 10px;
-      width: 250px;
+      padding: 10px 0;
+      width: 100%;
       font-size: 16px;
-      border: 2px solid #223580;
-      border-radius: 12px;
-      box-shadow: 2px solid #223580;
+      border-bottom: 1px solid #223580;
+      border-radius: 10px;
       margin-top: 10px;
       margin-bottom: 20px;
+      color: #223580;
+      outline: none;
+      background: transparent;
     }
 
-    .custom-btn {
-      width: 250px;
-      height: 44px;
-      background-color: #223580;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-    }
+    #passwordInput {
+  color: #326fff80;              /* цвет текста */
+  font-size: 15px;          /* размер шрифта */
+  font-family: 'Playfair Display SC', serif;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+  
 
 
 
@@ -122,29 +132,48 @@ margin-left: 40px;
 }
 
 
-<!--кнопка-->
+
+/* кнопка */
 .custom-btn {
-    width: 200px;
-  height: 60px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;              /* высота */
+  background-color: #223580; 
+  color: #f7f3eb;            
+  border: none;
+  border-radius: 12px;       /* более округлые углы */
+  cursor: pointer;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 18px;           /* размер текста */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 25px;        /* добавил паддинги из первого блока */
+  margin: 0 auto;
   position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none; 
+  box-shadow:
+    inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .btn-6 {
   background: rgb(64, 193, 249);
-background: radial-gradient(circle, rgb(61, 113, 186) 0%, rgba(118,174,241,1) 100%);
+background: radial-gradient(circle, #76aef1 0%, #76aef1 100%);
   line-height: 42px;
   padding: 0;
   border: none;
@@ -225,6 +254,6 @@ background: radial-gradient(circle, rgb(61, 113, 186) 0%, rgba(118,174,241,1) 10
 #errorMessage {
   color: red;
   font-family: 'Playfair Display SC', serif;
-  font-size: 16px;
-  margin-top: 5px;
+  font-size: 12px;
+  margin-top: 10px 10px;
 }
