@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
         integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
@@ -55,19 +56,17 @@
    
 </div>
 
-<h2 class="zagolovok">Панель управління кімнатами</h2>
 
-
-
-<h2 class="zagolovok">Бронювання кімнат</h2>
-
-<section class="booking-wrapper">
-<form class="booking-form" id="bookingForm">
-  <label>
+  <h2 class="zagolovok">Бронювання кімнат</h2>
+<section class="booking-wrapper booking-section">
+    <div class="booking-inner">
+      <div class="booking-form-wrapper">
+        <form class="booking-form" id="bookingForm">
+            <label>
     Ім'я гостя:
     <input type="text" name="guest" list="guestList" required>
     <datalist id="guestList"></datalist>
-  </label>
+           </label>
 
   <label>
     Дата заїзду:
@@ -128,9 +127,34 @@
 
   <button type="submit">Забронювати</button>
 </form>
+</div>
+
+<div class="calendar-wrapper">
+<div class="calendar-controls">
+  <label for="roomFilter">Кімната:</label>
+  <select id="roomFilter">
+    <option value="all">Все</option>
+    <option value="El Azur">El Azur</option>
+    <option value="Los Olivos">Los Olivos</option>
+    <option value="El Azahar">El Azahar</option>
+    <option value="La Albahaca">La Albahaca</option>
+    <option value="La Lavanda">La Lavanda</option>
+  </select>
+
+  <label for="departureFilter">Показати вильоти:</label>
+  <select id="departureFilter">
+    <option value="all">Показати все</option>
+    <option value="departures">✈️</option>
+  </select>
+</div>
+
+  <div id="calendar"></div>
+</div>
+</div>
+
 </section>
 
-<div id="calendar"></div>
+<h2 class="zagolovok">Панель управління кімнатами</h2>
 
 
 
