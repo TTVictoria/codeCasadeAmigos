@@ -198,13 +198,23 @@ position: absolute;
 }
 
 /* Загальні стилі для форми */
+
+.booking-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
    .booking-section {
       display: flex;
       flex-direction: row;
       justify-content: center;
       gap: 40px;
-      padding: 60px 20px;
- 
+      padding: 60px 20px; 
       min-height: 100vh;
       box-sizing: border-box;
       flex-wrap: wrap;
@@ -214,7 +224,7 @@ position: absolute;
 .booking-inner {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   gap: 40px;
   max-width: 1200px; /* ограничить ширину синего блока */
   width: 100%;
@@ -224,17 +234,30 @@ position: absolute;
 
 
 .booking-form-wrapper {
-  flex: 1;
-  max-width: 400px;
-  min-width: 280px;
-  justify-content: flex-start;
+    flex: 0 0 320px;
+    max-width: 320px;
+    min-width: 280px;
 }
 
-.calendar-wrapper {
-  flex: 2;
-  max-width: 900px;
-  min-width: 320px;
-}
+
+/* Стили для календаря */
+ .calendar-wrapper {
+      flex: 2;
+      min-width: 320px;
+      max-width: 900px;
+      background-color: #243b98;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: auto; /* чтобы не растягивался */
+      margin-left: 0; /* жёсткий отступ отсутствует */
+    }
 
 @media (max-width: 768px) {
   .booking-form-wrapper,
@@ -244,32 +267,24 @@ position: absolute;
   }
 }
     
-.booking-wrapper {
-  width: 100vw;
-  min-height: 100vh;
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 40px 20px;
-  box-sizing: border-box;
-}
 
  .booking-form {
-      background: linear-gradient(135deg, #243b98cc 0%, #243b98cc 100%);
-      padding: 30px 40px;
+      background: linear-gradient(135deg, #243b98 0%, #243b98 100%);
+      padding: 20px 24px;
       border-radius: 16px;
       color: white;
       box-sizing: border-box;
       box-shadow: 0 12px 25px rgba(36, 59, 152, 0.4);
       backdrop-filter: blur(8px);
       transition: box-shadow 0.3s ease;
+      font-size: 14px;
     }
 
 form {
   justify-content: flex-start;
   padding: 30px 40px;
-  background: linear-gradient(135deg, #243b98cc 0%, #243b98cc 100%);
+  background: linear-gradient(135deg, #243b98 0%, #243b98 100%);
   border-radius: 16px;
   color: white;
   font-family: 'Playfair Display SC', serif;
@@ -287,20 +302,22 @@ form:hover {
  .booking-form label {
       display: flex;
       flex-direction: column;
-      margin-bottom: 20px;
+      margin-bottom: 12px; /* отступ между блоками */
       font-weight: 600;
-      font-size: 16px;
+      font-size: 14px;
+      font-family: 'Amiri', sans-serif;
     }
 
 form label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.04em;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   user-select: none;
+  font-family: 'Amiri', sans-serif;
 }
 
 /* Поля ввода и селекты */
@@ -309,14 +326,16 @@ form label {
     .booking-form input[type="time"],
     .booking-form select {
       margin-top: 8px;
-      padding: 10px 14px;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
+      font-size: 14px;
+      padding: 8px 10px;
       font-family: inherit;
       outline: none;
       box-sizing: border-box;
     }
+
+
 
     .booking-form input[type="checkbox"] {
       margin-top: 12px;
@@ -325,13 +344,26 @@ form label {
       cursor: pointer;
     }
 
+/* забрать с аэропорта */
+.checkbox-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* расстояние между галочкой и текстом */
+  font-size: 14px;
+  margin-bottom: 12px; /* отступ снизу */
+  font-family: 'Amiri', sans-serif;
+
+  font-weight: 500;
+  color: white;
+}
+
 
 form input[type="text"]:focus,
 form input[type="date"]:focus,
 form input[type="time"]:focus,
 form select:focus {
   background: #fff;
-  box-shadow: 0 0 10px 3px #8fa7f9;
+  box-shadow: 0 0 5px 3px #ffce54;
   color: #243b98;
   cursor: text;
 }
@@ -353,20 +385,20 @@ form input[type="checkbox"]:hover {
 
 /* Кнопка */
   .booking-form button {
-      background-color: #243b98;
+      background-color: #637ecf;
       color: white;
       font-weight: 700;
       font-size: 16px;
       padding: 12px;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
+      cursor: url('../image/svg/seashell1.svg'), auto;
       width: 100%;
       transition: background-color 0.3s ease;
     }
 
 .booking-form button:hover {
-  background: #4f67b1;
+  background: #ffce54;
   box-shadow: 0 10px 25px #637ecf(79, 103, 177, 0.8);
 }
 
@@ -378,7 +410,7 @@ form input[type="checkbox"]:hover {
       }
 
 
-/* Селектор комнат с шрифтом Yeseva One */
+/* Селектор комнат */
 select[name="room"] {
   font-family: 'Yeseva One', cursive;
   font-size: 18px;
@@ -387,42 +419,42 @@ select[name="room"] {
   border-radius: 14px;
   background-color: white;
   color: #243b98;
-  min-width: 320px;
+  width: 100%;
   cursor: pointer;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 select[name="room"]:focus {
   border-color: #637ecf;
-  box-shadow: 0 0 15px 3px #637ecf88;
+  box-shadow: 0 0 15px 3px #ffce54;
   outline: none;
 }
 
 /* Застосовуємо кольори через клас (для кастомних списків або JS-обробки) */
 /* Цвета для опций комнат */
 option[value="El Azur"] {
-  background-color: #a3dff2;
-  color: #243b98;
+
+  color: #a3dff2;
   font-family: 'Amiri', sans-serif;
 }
 option[value="Los Olivos"] {
-  background-color: #fece04;
-  color: #543f00;
+
+  color: #fece04;
   font-family: 'Amiri', sans-serif;
 }
 option[value="El Azahar"] {
-  background-color: #beba2a;
-  color: #3d3a00;
+
+  color: #beba2a;
   font-family: 'Amiri', sans-serif;
 }
 option[value="La Albahaca"] {
-  background-color: #4f1f3a;
-  color: #f0e7f2;
+
+  color: #4f1f3a;
   font-family: 'Amiri', sans-serif;
 }
 option[value="La Lavanda"] {
-  background-color: #b8a1ea;
-  color: #3c2f6d;
+
+  color: #b8a1ea;
   font-family: 'Amiri', sans-serif;
 }
 
@@ -432,6 +464,29 @@ select[name="room"] option:disabled {
   color: #999;
   cursor: not-allowed;
 }
+
+/* ячейки количество посетителей */
+.row-inline {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.row-inline label {
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.booking-form input[type="number"] {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Amiri', sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 
 /* Мелкие подсказки (tooltip) */
 form label small {
@@ -452,30 +507,7 @@ form label small {
     min-width: 100%;
   }
 }
-
-
-
-/* Стили для календаря */
- .calendar-wrapper {
-      flex: 1;
-      min-width: 360px;
-      max-width: 900px;
-      background-color: #243b98;
-      border-radius: 16px;
-      padding: 15px;
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-      box-sizing: border-box;
-      overflow-x: auto;
-      margin-left: 150px; /* отступ слева от формы */
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      height: auto; /* чтобы не растягивался */
-    }
-
-
-   
+  
 
     /* Меньший шрифт заголовка месяца */
 .fc-toolbar-title {
@@ -589,7 +621,7 @@ form label small {
 /* Кнопки (день, неделя, месяц, today и стрелки) */
 .fc .fc-prev-button,
 .fc .fc-next-button {
-  background-color: #637ecf;
+  background-color: #243b98;
   font-size: 16px;
   padding: 6px 10px;
   border-radius: 6px;
@@ -637,7 +669,7 @@ form label small {
 /* Стиль стрелок */
 .fc .fc-prev-button,
 .fc .fc-next-button {
-  background-color: #637ecf;
+  background-color: #243b98;
   font-size: 16px;
   padding: 6px 10px;
   border-radius: 6px;

@@ -98,20 +98,22 @@
     <input type="time" name="departureTime" required>
   </label>
 
-  <label>
-    Забрати з аеропорту:
-    <input type="checkbox" name="airportPickup">
+  <label class="checkbox-inline" style="display: flex; align-items: center; gap: 8px;">
+    <input type="checkbox" name="airport_pickup">
+      <span>Забрати з аеропорту</span>
   </label>
 
+  <div class="row-inline">
   <label>
     Дорослих:
-    <input type="number" name="adults" min="1" required>
+    <input type="number" name="adults" min="1" value="1">
   </label>
 
   <label>
     Дітей:
-    <input type="number" name="children" min="0" required>
+    <input type="number" name="children" min="0" value="0">
   </label>
+  </div>
 
   <label>
     Обрати кімнату:
