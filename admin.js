@@ -186,3 +186,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+function changeQty(field, delta) {
+    const input = document.getElementById(field);
+    let value = parseInt(input.value, 10);
+    const min = parseInt(input.min, 10);
+
+    value = isNaN(value) ? min : value + delta;
+    if (value < min) value = min;
+
+    input.value = value;
+  }

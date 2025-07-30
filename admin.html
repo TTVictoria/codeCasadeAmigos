@@ -18,6 +18,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
          <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
          <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="./css/admin.css">
 </head>
@@ -62,59 +63,86 @@
     <div class="booking-inner">
       <div class="booking-form-wrapper">
         <form class="booking-form" id="bookingForm">
-            <label>
-    Ім'я гостя:
-    <input type="text" name="guest" list="guestList" required>
-    <datalist id="guestList"></datalist>
-           </label>
+           
+          <!-- Гість -->
+        <div class="">
+          <label>
+            Ім'я гостя:
+            <input type="text" name="guest" list="guestList" required>
+            <datalist id="guestList"></datalist>
+          </label>
+        </div>
+
+        <!-- Дати проживання -->
+        <div class="">
+          <label>
+            Дата заїзду:
+            <input type="date" name="start" required>
+          </label>
+          
+          <label>
+            Дата виїзду:
+            <input type="date" name="end" required>
+          </label>
+        </div>
+        
+        <!-- Приліт -->
+        <div class="booking-block">
+          <label class="icon-label">
+            <i class="fas fa-plane-arrival"></i>
+            Дата прильоту:
+            <input type="date" name="arrivalDate" required>
+          </label>
+          
+          <label>
+            Час прильоту:
+            <input type="time" name="arrivalTime" required>
+          </label>
+        </div>
+
+        <!-- Виліт -->
+        <div class="booking-block">
+          <label class="icon-label">
+            <i class="fas fa-plane-departure"></i>
+            Дата вильоту:
+            <input type="date" name="departureDate" required>
+          </label>
+          
+          <label>
+            Час вильоту:
+            <input type="time" name="departureTime" required>
+          </label>
+        </div>
+
+
+        <!-- Трансфер -->
+        <div class="checkbox-block">
+          <label class="checkbox-inline" style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" name="airport_pickup">
+            <span>Забрати з аеропорту</span>
+          </label>
+        </div>
+
+
+<!-- Дорослі та діти -->
+<div class="row-inline quantity-row">
+  <div class="quantity-block">
+    <i class="fas fa-user" title="Дорослі"></i>
+    <div class="quantity-control">
+      <button type="button" class="qty-btn" onclick="changeQty('adults', -1)">−</button>
+      <input type="number" name="adults" id="adults" min="1" value="1">
+      <button type="button" class="qty-btn" onclick="changeQty('adults', 1)">+</button>
+    </div>
+  </div>
+
 
   <label>
-    Дата заїзду:
-    <input type="date" name="start" required>
-  </label>
-
-  <label>
-    Дата виїзду:
-    <input type="date" name="end" required>
-  </label>
-
-  <label>
-    Дата прильоту:
-    <input type="date" name="arrivalDate" required>
-  </label>
-
-  <label>
-    Час прильоту:
-    <input type="time" name="arrivalTime" required>
-  </label>
-
-  <label>
-    Дата вильоту:
-    <input type="date" name="departureDate" required>
-  </label>
-
-  <label>
-    Час вильоту:
-    <input type="time" name="departureTime" required>
-  </label>
-
-  <label class="checkbox-inline" style="display: flex; align-items: center; gap: 8px;">
-    <input type="checkbox" name="airport_pickup">
-      <span>Забрати з аеропорту</span>
-  </label>
-
-  <div class="row-inline">
-  <label>
-    Дорослих:
-    <input type="number" name="adults" min="1" value="1">
-  </label>
-
-  <label>
-    Дітей:
+    <i class="fas fa-child" title="Дітей"></i>
     <input type="number" name="children" min="0" value="0">
   </label>
   </div>
 
+   <div class="">
   <label>
     Обрати кімнату:
     <select name="room" id="roomSelect" required>
@@ -126,8 +154,12 @@
       <option value="La Lavanda">Кімната (Лєна) “La Lavanda”</option>
     </select>
   </label>
+  </div>
 
-  <button type="submit">Забронювати</button>
+  <div class="">
+    <button type="submit">Забронювати</button>
+  </div>
+
 </form>
 </div>
 
