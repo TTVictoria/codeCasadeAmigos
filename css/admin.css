@@ -302,7 +302,7 @@ form:hover {
  .booking-form label {
       display: flex;
       flex-direction: column;
-      margin-bottom: 12px; /* отступ между блоками */
+      margin-bottom: 8px; /* отступ между блоками */
       font-weight: 600;
       font-size: 14px;
       font-family: 'Amiri', sans-serif;
@@ -348,7 +348,7 @@ form label {
 .checkbox-inline {
   display: flex;
   align-items: center;
-  gap: 8px; /* расстояние между галочкой и текстом */
+  gap: 5px; /* расстояние между галочкой и текстом */
   font-size: 14px;
   margin-bottom: 12px; /* отступ снизу */
   font-family: 'Amiri', sans-serif;
@@ -468,7 +468,7 @@ select[name="room"] option:disabled {
 /* ячейки количество посетителей */
 .row-inline {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   justify-content: space-between;
 }
 
@@ -715,7 +715,7 @@ form label small {
 .booking-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   max-width: 480px;
   margin: 0 auto;
   font-family: 'Amiri', serif;
@@ -809,7 +809,7 @@ form label small {
 
 .quantity-row {
   display: flex;
-  gap: 40px;
+  gap: 10px;
   margin-top: 12px;
   justify-content: start;
   flex-wrap: wrap;

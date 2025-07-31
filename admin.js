@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
   const roomColors = {
     'El Azur': '#a3e0f2bf',

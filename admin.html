@@ -19,7 +19,7 @@
          <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
          <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+
     <link rel="stylesheet" href="./css/admin.css">
 </head>
 
@@ -136,22 +136,26 @@
   </div>
 
 
-  <label>
-    <i class="fas fa-child" title="Дітей"></i>
-    <input type="number" name="children" min="0" value="0">
-  </label>
+  <div class="quantity-block">
+    <i class="fas fa-child" title="Діти"></i>
+    <div class="quantity-control">
+      <button type="button" class="qty-btn" onclick="changeQty('children', -1)">−</button>
+      <input type="number" name="children" id="children" min="0" value="0">
+      <button type="button" class="qty-btn" onclick="changeQty('children', 1)">+</button>
+    </div>
   </div>
+</div>
 
    <div class="">
   <label>
     Обрати кімнату:
     <select name="room" id="roomSelect" required>
       <option value="">-- Оберіть --</option>
-      <option value="El Azur">Кімната (біля басейну) “El Azur”</option>
-      <option value="Los Olivos">Кімната (центр.буд.) “Los Olivos”</option>
-      <option value="El Azahar">Кімната (центр.буд.) “El Azahar”</option>
-      <option value="La Albahaca">Кімната (Ліза) “La Albahaca”</option>
-      <option value="La Lavanda">Кімната (Лєна) “La Lavanda”</option>
+      <option value="El Azur">Кімната “El Azur” (біля басейну)</option>
+      <option value="Los Olivos">Кімната “Los Olivos” (центр.буд.)</option>
+      <option value="El Azahar">Кімната “El Azahar” (центр.буд.)</option>
+      <option value="La Albahaca">Кімната “La Albahaca” (Ліза)</option>
+      <option value="La Lavanda">Кімната “La Lavanda” (Олена)</option>
     </select>
   </label>
   </div>
@@ -196,5 +200,16 @@
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script type="module" src="./admin.js"></script>
+<script>
+  function changeQty(fieldId, delta) {
+    const input = document.getElementById(fieldId);
+    let value = parseInt(input.value, 10) || 0;
+    const min = parseInt(input.min, 10) || 0;
+
+    value += delta;
+    if (value < min) value = min;
+    input.value = value;
+  }
+</script>
 
 </html>
