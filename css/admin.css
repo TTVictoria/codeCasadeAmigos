@@ -715,7 +715,7 @@ form label small {
 .booking-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
   max-width: 480px;
   margin: 0 auto;
   font-family: 'Amiri', serif;
@@ -806,12 +806,175 @@ form label small {
 
 
 
+/* комнаты *//* Общий блок */
+.room-carousel {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
 
+/* Обертка слайдера */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Контейнер с карточками */
+.carousel-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Отдельная карточка */
+.room-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  background: rgba(247, 243, 235, 0.9);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Адаптив: планшеты */
+@media (max-width: 768px) {
+  .room-card {
+    flex: 0 0 80%;
+  }
+}
+
+/* Адаптив: мобильные */
+@media (max-width: 480px) {
+  .room-card {
+    flex: 0 0 90%;
+  }
+
+  .feature-icons i {
+    font-size: 20px;
+  }
+}
+
+/* Картинка в карточке */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover overlay */
+.overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 46, 117, 0.9);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  transition: bottom 0.4s ease;
+}
+
+.image-container:hover .overlay {
+  bottom: 0;
+}
+
+/* Иконки характеристик */
+.feature-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Заголовок комнаты */
+.zagolovokroom {
+  color: #223580;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 5px 0 0;
+  text-align: center;
+  font-family: 'Amiri', sans-serif;
+}
+
+/* Подзаголовок (описание) */
+.textroom {
+  color: #c5a692;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 5px 0 0;
+  text-align: center;
+  font-family: 'Amiri', sans-serif;
+}
+
+/* Кнопки прокрутки (стрелки) */
+.circle-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #243b98;
+  color: #fac921;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.circle-arrow:hover {
+  background-color: #f0f0f0;
+  color: #243b98;
+  transform: scale(1.05);
+}
+
+.circle-arrow i {
+  font-size: 18px;
+}
+
+.circle-arrow.left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.circle-arrow.right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Кол-во гостей, если используется (блок с input и +/-) */
 .quantity-row {
   display: flex;
   gap: 10px;
   margin-top: 12px;
-  justify-content: start;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -857,4 +1020,32 @@ form label small {
 
 .qty-btn:hover {
   background-color: #162960;
+}
+
+
+.room-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+
+.room-slider::-webkit-scrollbar {
+  display: none; /* для Chrome, Safari */
+}
+
+.room-slider {
+  -ms-overflow-style: none;  /* для Internet Explorer и Edge */
+  scrollbar-width: none;     /* для Firefox */
+}
+
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }

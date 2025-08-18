@@ -205,3 +205,38 @@ function changeQty(field, delta) {
 
     input.value = value;
   }
+
+
+
+
+
+
+
+
+// прокрутка стрелок на панеле комнат
+  const track = document.querySelector('.carousel-track');
+const leftBtn = document.querySelector('.arrow.left');
+const rightBtn = document.querySelector('.arrow.right');
+
+let currentIndex = 0;
+const visibleCards = 3;
+const cards = document.querySelectorAll('.room-card');
+const cardWidth = cards[0].offsetWidth + 30;
+
+leftBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+rightBtn.addEventListener('click', () => {
+  if ((currentIndex + visibleCards) < cards.length) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
